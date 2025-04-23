@@ -5,7 +5,10 @@ const connection = mysql.createConnection({
   user: 'sodtdb_user',
   password: 'Intellect@2025',
   database: 'sodtdb',
-  port: 3306 
+  port: 3306,
+   waitForConnections: true,
+  connectionLimit: 10,  // 🔹 Only 10 connections max at a time
+  queueLimit: 0
 });
 
 
