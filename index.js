@@ -6,7 +6,8 @@ dotenv.config();
 import sendEmail from './services/nodemailer.js';
 
 const app = express();
-const PORT = process.env.PORT;
+//const PORT = process.env.PORT;
+const PORT = 3000;
 
 
 const corsOptions = {
@@ -14,8 +15,8 @@ const corsOptions = {
     optionsSuccessStatus: 200 
 }
 
-app.use(cors(corsOptions));
-// app.use(cors());
+//app.use(cors(corsOptions)); 
+app.use(cors());
 app.use(express.json()); 
 
 app.get('/', ( req,  res) =>{
