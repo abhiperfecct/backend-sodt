@@ -9,6 +9,9 @@ const transporter = nodemailer.createTransport({
     pass: process.env.PASSWORD,
   },
 });
+console.log("MY_USER:", process.env.USER);
+console.log("MY_PASSWORD:", process.env.PASSWORD);
+console.log("MY_CC:", process.env.CC);
 
 const sendEmail = async (to, ApplicantName) => {
   const html = `
