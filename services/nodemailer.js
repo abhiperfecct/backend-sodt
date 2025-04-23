@@ -5,8 +5,8 @@ const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 25,
   auth: {
-    user: process.env.user,
-    pass: process.env.pass,
+    user: process.env.USER,
+    pass: process.env.PASSWORD,
   },
 });
 
@@ -115,7 +115,7 @@ const sendEmail = async (to, subject, ApplicantName) => {
     to: to,
     subject: subject,
     html: html,
-    // cc: "anand.pushparaj@d-thinking.com",
+    cc:  process.env.CC,
   };
 
   try {
