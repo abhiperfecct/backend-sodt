@@ -72,6 +72,7 @@ app.post('/submit-detail', async (req, res) => {
         item.answer          
       ]);
       await connection.promise().query(insertQuestionsQuery, [questionData]);
+        sendEmail(email, name);
     }
     res.status(200).json({ message: 'Form data submitted successfully.'});
   } catch (err) {
