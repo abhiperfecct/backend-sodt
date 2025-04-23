@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const sendEmail = async (to, subject, ApplicantName) => {
+const sendEmail = async (to, ApplicantName) => {
   const html = `
   <!DOCTYPE html>
   <html lang="en">
@@ -113,7 +113,7 @@ const sendEmail = async (to, subject, ApplicantName) => {
 
   const mailOptions = {
     to: to,
-    subject: subject,
+    subject: "Your Design Thinking Shift Begins Now.",
     html: html,
     cc:  process.env.CC,
   };
